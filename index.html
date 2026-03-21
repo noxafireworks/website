@@ -25,45 +25,45 @@ background-size: cover; background-position: center; height: 100vh;
 </head>
 <body>
 
-<nav class="fixed w-full z-[100] nav-blur h-20 flex items-center px-10">
+<nav class="fixed w-full z-[100] nav-blur h-16 md:h-20 flex items-center px-4 md:px-10">
 <div class="max-w-[1400px] mx-auto w-full flex justify-between items-center">
-<div class="text-2xl font-[900] tracking-tighter italic uppercase">NOXA<span class="text-[#FF6A00]">FIREWORKS</span></div>
+<div class="text-lg sm:text-xl md:text-2xl font-[900] tracking-tighter italic uppercase">NOXA<span class="text-[#FF6A00]">FIREWORKS</span></div>
 <div class="hidden md:flex space-x-10 font-bold text-[11px] uppercase tracking-[0.2em] text-gray-500">
 <a href="#home" class="hover:text-black transition-colors">Start</a>
 <a href="#katalog" class="hover:text-black transition-colors">Katalog</a>
 <a href="#hitta-oss" class="hover:text-black transition-colors">Hitta Butik</a>
 <a href="#kontakt" class="hover:text-black transition-colors">Kontakt</a>
 </div>
-<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="bg-black text-white px-6 py-2 rounded-full text-[10px] font-black uppercase hover:bg-[#FF6A00] transition-all">ÖPPNA PDF</a>
+<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="bg-black text-white px-4 py-2 md:px-6 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase hover:bg-[#FF6A00] transition-all whitespace-nowrap">ÖPPNA PDF</a>
 </div>
 </nav>
 
-<section id="home" class="hero-bg flex items-center px-10">
-<div class="max-w-[1400px] mx-auto w-full text-center md:text-left">
-<h1 class="text-6xl md:text-[120px] font-black leading-[0.85] tracking-tighter italic uppercase text-white mb-10">
+<section id="home" class="hero-bg flex items-center px-4 md:px-10">
+<div class="max-w-[1400px] mx-auto w-full text-center md:text-left mt-10 md:mt-0">
+<h1 class="text-6xl md:text-[120px] font-black leading-[1] md:leading-[0.85] tracking-tighter italic uppercase text-white mb-8 md:mb-10">
 Noxa <br><span class="text-[#FF6A00]">Fireworks</span>
 </h1>
-<div class="flex flex-wrap justify-center md:justify-start gap-6">
-<a href="#katalog" class="bg-[#FF6A00] text-white px-12 py-6 rounded-full font-black hover:scale-105 transition-all">SE PRODUKTER</a>
-<a href="#hitta-oss" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-6 rounded-full font-black hover:bg-white hover:text-black transition-all">HITTA BUTIK</a>
+<div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 md:gap-6">
+<a href="#katalog" class="bg-[#FF6A00] text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black hover:scale-105 transition-all text-sm md:text-base">SE PRODUKTER</a>
+<a href="#hitta-oss" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black hover:bg-white hover:text-black transition-all text-sm md:text-base">HITTA BUTIK</a>
 </div>
 </div>
 </section>
 
-<section id="katalog" class="py-32 px-10 bg-white">
-<div class="max-w-[1200px] mx-auto bg-gray-50 rounded-[60px] overflow-hidden border border-gray-100 p-10 md:p-20 shadow-sm">
-<div class="grid md:grid-cols-2 gap-16 items-center">
-<div>
-<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="block group relative rounded-[30px] overflow-hidden shadow-2xl hover:scale-[1.03] transition-transform duration-500 cursor-pointer">
-<img src="d90308f4-01.png" alt="Noxa Katalog 2025" class="w-full block object-cover">
+<section id="katalog" class="py-20 md:py-32 px-4 md:px-10 bg-white">
+<div class="max-w-[1200px] mx-auto bg-gray-50 rounded-[40px] md:rounded-[60px] overflow-hidden border border-gray-100 p-6 md:p-20 shadow-sm">
+<div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+<div class="w-full max-w-sm mx-auto md:max-w-none">
+<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="block group relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl hover:scale-[1.03] transition-transform duration-500 cursor-pointer">
+<img src="d90308f4-01.png" alt="Noxa Katalog 2025" class="w-full block object-cover mx-auto">
 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<span class="text-white font-black text-xl uppercase tracking-widest bg-[#FF6A00] px-6 py-3 rounded-full shadow-lg">Läs Katalog</span>
+<span class="text-white font-black text-sm md:text-xl uppercase tracking-widest bg-[#FF6A00] px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg">Läs Katalog</span>
 </div>
 </a>
 </div>
-<div>
-<h2 class="text-5xl font-black italic uppercase my-6 tracking-tighter text-black">Upplev hela <br><span class="text-[#FF6A00]">Kollektionen.</span></h2>
-<p class="text-gray-500 text-lg font-light leading-relaxed">
+<div class="text-center md:text-left">
+<h2 class="text-4xl md:text-5xl font-black italic uppercase mb-4 md:my-6 tracking-tighter text-black">Upplev hela <br><span class="text-[#FF6A00]">Kollektionen.</span></h2>
+<p class="text-gray-500 text-base md:text-lg font-light leading-relaxed">
 Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. Här hittar du alla våra batterier, raketer och fontäner med priser och info. Klicka på bilden bredvid för att öppna katalogen!
 </p>
 </div>
@@ -71,34 +71,34 @@ Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. H�
 </div>
 </section>
 
-<section id="hitta-oss" class="py-32 px-10 bg-gray-50 text-center">
+<section id="hitta-oss" class="py-20 md:py-32 px-4 md:px-10 bg-gray-50 text-center">
 <div class="max-w-[1400px] mx-auto">
-<h2 class="text-6xl font-black italic uppercase tracking-tighter mb-16">Hitta <span class="text-[#FF6A00]">Butik.</span></h2>
-<div class="rounded-[50px] overflow-hidden border-8 border-white h-[600px] shadow-2xl relative z-10">
+<h2 class="text-5xl md:text-6xl font-black italic uppercase tracking-tighter mb-10 md:mb-16">Hitta <span class="text-[#FF6A00]">Butik.</span></h2>
+<div class="rounded-[30px] md:rounded-[50px] overflow-hidden border-4 md:border-8 border-white h-[400px] md:h-[600px] shadow-2xl relative z-10">
 <div id="map" class="w-full h-full"></div>
 </div>
 </div>
 </section>
 
-<section id="kontakt" class="py-32 px-10 bg-black text-white">
-<div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-20">
-<div>
-<h2 class="text-5xl font-black italic uppercase tracking-tighter mb-6">Kontakta <span class="text-[#FF6A00]">oss.</span></h2>
-<div class="space-y-8 mt-12">
-<div class="flex items-center gap-6">
-<div class="w-14 h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white"><i data-lucide="mail" size="28"></i></div>
-<div><p class="text-xs text-gray-500 uppercase font-bold tracking-widest">E-post</p><p class="text-xl font-bold">Linkaforetag@gmail.com</p></div>
+<section id="kontakt" class="py-20 md:py-32 px-4 md:px-10 bg-black text-white">
+<div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 md:gap-20">
+<div class="text-center md:text-left">
+<h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter mb-6">Kontakta <span class="text-[#FF6A00]">oss.</span></h2>
+<div class="space-y-6 md:space-y-8 mt-8 md:mt-12 flex flex-col items-center md:items-start">
+<div class="flex items-center gap-4 md:gap-6 text-left">
+<div class="w-12 h-12 md:w-14 md:h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white shrink-0"><i data-lucide="mail" size="24"></i></div>
+<div><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">E-post</p><p class="text-lg md:text-xl font-bold">Linkaforetag@gmail.com</p></div>
 </div>
-<div class="flex items-center gap-6">
-<div class="w-14 h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white"><i data-lucide="phone" size="28"></i></div>
-<div><p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Telefon</p><p class="text-xl font-bold">+46 738 456-456</p></div>
+<div class="flex items-center gap-4 md:gap-6 text-left">
+<div class="w-12 h-12 md:w-14 md:h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white shrink-0"><i data-lucide="phone" size="24"></i></div>
+<div><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">Telefon</p><p class="text-lg md:text-xl font-bold">+46 738 456-456</p></div>
 </div>
 </div>
 </div>
-<div class="bg-white/5 p-12 rounded-[40px] border border-white/10 text-center flex flex-col justify-center">
-<div class="text-3xl font-black italic mb-4 uppercase italic">Välkommen</div>
-<p class="text-gray-400 text-lg leading-relaxed">Vi är redo att göra din nyårsafton oförglömlig. Kontakta oss för frågor om sortiment eller inköp.</p>
-<div class="mt-8 pt-8 border-t border-white/10 italic font-black text-[#FF6A00]">NOXA FIREWORKS SWEDEN</div>
+<div class="bg-white/5 p-8 md:p-12 rounded-[30px] md:rounded-[40px] border border-white/10 text-center flex flex-col justify-center">
+<div class="text-2xl md:text-3xl font-black italic mb-4 uppercase">Välkommen</div>
+<p class="text-gray-400 text-base md:text-lg leading-relaxed">Vi är redo att göra din nyårsafton oförglömlig. Kontakta oss för frågor om sortiment eller inköp.</p>
+<div class="mt-8 pt-8 border-t border-white/10 italic font-black text-[#FF6A00] text-sm md:text-base">NOXA FIREWORKS SWEDEN</div>
 </div>
 </div>
 </section>

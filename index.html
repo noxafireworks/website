@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Noxa Fireworks | 2025</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,13 +12,14 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root { --noxa-orange: #FF6A00; }
-body { font-family: 'Inter', sans-serif; background-color: #ffffff; scroll-behavior: smooth; margin:0; }
+/* VÄLDIGT VIKTIGT FÖR MOBIL: Förhindrar att sidan blir för bred och "sladdrig" i sidled */
+html, body { max-width: 100vw; overflow-x: hidden; font-family: 'Inter', sans-serif; background-color: #ffffff; scroll-behavior: smooth; margin:0; }
+
 .hero-bg {
 background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1920&q=80');
 background-size: cover; background-position: center; height: 100vh;
 }
 .nav-blur { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; }
-/* Justering för Leaflet popups */
 .leaflet-popup-content-wrapper { border-radius: 12px; }
 .leaflet-popup-content b { color: #FF6A00; font-size: 1.1em; }
 </style>
@@ -27,78 +28,78 @@ background-size: cover; background-position: center; height: 100vh;
 
 <nav class="fixed w-full z-[100] nav-blur h-16 md:h-20 flex items-center px-4 md:px-10">
 <div class="max-w-[1400px] mx-auto w-full flex justify-between items-center">
-<div class="text-lg sm:text-xl md:text-2xl font-[900] tracking-tighter italic uppercase">NOXA<span class="text-[#FF6A00]">FIREWORKS</span></div>
+<div class="text-base sm:text-xl md:text-2xl font-[900] tracking-tighter italic uppercase whitespace-nowrap">NOXA<span class="text-[#FF6A00]">FIREWORKS</span></div>
 <div class="hidden md:flex space-x-10 font-bold text-[11px] uppercase tracking-[0.2em] text-gray-500">
 <a href="#home" class="hover:text-black transition-colors">Start</a>
 <a href="#katalog" class="hover:text-black transition-colors">Katalog</a>
 <a href="#hitta-oss" class="hover:text-black transition-colors">Hitta Butik</a>
 <a href="#kontakt" class="hover:text-black transition-colors">Kontakt</a>
 </div>
-<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="bg-black text-white px-4 py-2 md:px-6 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase hover:bg-[#FF6A00] transition-all whitespace-nowrap">ÖPPNA PDF</a>
+<a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="bg-black text-white px-4 py-2 md:px-6 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase hover:bg-[#FF6A00] transition-all whitespace-nowrap ml-2">ÖPPNA PDF</a>
 </div>
 </nav>
 
 <section id="home" class="hero-bg flex items-center px-4 md:px-10">
 <div class="max-w-[1400px] mx-auto w-full text-center md:text-left mt-10 md:mt-0">
-<h1 class="text-6xl md:text-[120px] font-black leading-[1] md:leading-[0.85] tracking-tighter italic uppercase text-white mb-8 md:mb-10">
+<h1 class="text-5xl sm:text-6xl md:text-[120px] font-black leading-[1] md:leading-[0.85] tracking-tighter italic uppercase text-white mb-8 md:mb-10 break-words">
 Noxa <br><span class="text-[#FF6A00]">Fireworks</span>
 </h1>
 <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 md:gap-6">
-<a href="#katalog" class="bg-[#FF6A00] text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black hover:scale-105 transition-all text-sm md:text-base">SE PRODUKTER</a>
-<a href="#hitta-oss" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black hover:bg-white hover:text-black transition-all text-sm md:text-base">HITTA BUTIK</a>
+<a href="#katalog" class="bg-[#FF6A00] text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-black hover:scale-105 transition-all text-sm md:text-base">SE PRODUKTER</a>
+<a href="#hitta-oss" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-black hover:bg-white hover:text-black transition-all text-sm md:text-base">HITTA BUTIK</a>
 </div>
 </div>
 </section>
 
-<section id="katalog" class="py-20 md:py-32 px-4 md:px-10 bg-white">
-<div class="max-w-[1200px] mx-auto bg-gray-50 rounded-[40px] md:rounded-[60px] overflow-hidden border border-gray-100 p-6 md:p-20 shadow-sm">
-<div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-<div class="w-full max-w-sm mx-auto md:max-w-none">
+<section id="katalog" class="py-16 md:py-32 px-4 md:px-10 bg-white flex justify-center w-full">
+<div class="max-w-[1200px] w-full bg-gray-50 rounded-[30px] md:rounded-[60px] overflow-hidden border border-gray-100 p-6 md:p-20 shadow-sm">
+<div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+<div class="w-[85%] max-w-[320px] md:max-w-none md:w-full mx-auto">
 <a href="Fyrverkeri Katalog (1).pdf.pdf" target="_blank" class="block group relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-2xl hover:scale-[1.03] transition-transform duration-500 cursor-pointer">
-<img src="d90308f4-01.png" alt="Noxa Katalog 2025" class="w-full block object-cover mx-auto">
+<img src="d90308f4-01.png" alt="Noxa Katalog 2025" class="w-full block object-cover">
 <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <span class="text-white font-black text-sm md:text-xl uppercase tracking-widest bg-[#FF6A00] px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg">Läs Katalog</span>
 </div>
 </a>
 </div>
-<div class="text-center md:text-left">
-<h2 class="text-4xl md:text-5xl font-black italic uppercase mb-4 md:my-6 tracking-tighter text-black">Upplev hela <br><span class="text-[#FF6A00]">Kollektionen.</span></h2>
-<p class="text-gray-500 text-base md:text-lg font-light leading-relaxed">
-Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. Här hittar du alla våra batterier, raketer och fontäner med priser och info. Klicka på bilden bredvid för att öppna katalogen!
+<div class="text-center md:text-left flex flex-col items-center md:items-start w-full">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black italic uppercase mb-4 md:my-6 tracking-tighter text-black w-full text-center md:text-left break-words">Upplev hela <br><span class="text-[#FF6A00]">Kollektionen.</span></h2>
+<p class="text-gray-500 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-[350px] md:max-w-none">
+Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. Här hittar du alla våra batterier, raketer och fontäner med priser och info. Klicka på bilden för att öppna katalogen!
 </p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="hitta-oss" class="py-20 md:py-32 px-4 md:px-10 bg-gray-50 text-center">
-<div class="max-w-[1400px] mx-auto">
-<h2 class="text-5xl md:text-6xl font-black italic uppercase tracking-tighter mb-10 md:mb-16">Hitta <span class="text-[#FF6A00]">Butik.</span></h2>
-<div class="rounded-[30px] md:rounded-[50px] overflow-hidden border-4 md:border-8 border-white h-[400px] md:h-[600px] shadow-2xl relative z-10">
-<div id="map" class="w-full h-full"></div>
+<section id="hitta-oss" class="py-16 md:py-32 px-4 md:px-10 bg-gray-50 text-center w-full">
+<div class="max-w-[1400px] mx-auto w-full">
+<h2 class="text-4xl sm:text-5xl md:text-6xl font-black italic uppercase tracking-tighter mb-8 md:mb-16">Hitta <span class="text-[#FF6A00]">Butik.</span></h2>
+<div class="rounded-[30px] md:rounded-[50px] overflow-hidden border-4 md:border-8 border-white h-[350px] md:h-[600px] shadow-2xl relative z-10 w-full">
+<div id="map" class="w-full h-full relative z-0"></div>
 </div>
 </div>
 </section>
 
-<section id="kontakt" class="py-20 md:py-32 px-4 md:px-10 bg-black text-white">
-<div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 md:gap-20">
-<div class="text-center md:text-left">
+<section id="kontakt" class="py-16 md:py-32 px-4 md:px-10 bg-black text-white w-full">
+<div class="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-10 md:gap-20">
+<div class="text-center md:text-left flex flex-col items-center md:items-start w-full">
 <h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter mb-6">Kontakta <span class="text-[#FF6A00]">oss.</span></h2>
-<div class="space-y-6 md:space-y-8 mt-8 md:mt-12 flex flex-col items-center md:items-start">
-<div class="flex items-center gap-4 md:gap-6 text-left">
+<div class="space-y-6 md:space-y-8 mt-4 md:mt-12 w-full max-w-[300px] md:max-w-none">
+<div class="flex items-center gap-4 text-left w-full">
 <div class="w-12 h-12 md:w-14 md:h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white shrink-0"><i data-lucide="mail" size="24"></i></div>
-<div><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">E-post</p><p class="text-lg md:text-xl font-bold">Linkaforetag@gmail.com</p></div>
+<div class="flex-1 min-w-0"><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">E-post</p><p class="text-base sm:text-lg md:text-xl font-bold break-all">Linkaforetag@gmail.com</p></div>
 </div>
-<div class="flex items-center gap-4 md:gap-6 text-left">
+<div class="flex items-center gap-4 text-left w-full">
 <div class="w-12 h-12 md:w-14 md:h-14 bg-[#FF6A00] rounded-full flex items-center justify-center text-white shrink-0"><i data-lucide="phone" size="24"></i></div>
-<div><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">Telefon</p><p class="text-lg md:text-xl font-bold">+46 738 456-456</p></div>
+<div class="flex-1"><p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest">Telefon</p><p class="text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">+46 738 456-456</p></div>
 </div>
 </div>
 </div>
 <div class="bg-white/5 p-8 md:p-12 rounded-[30px] md:rounded-[40px] border border-white/10 text-center flex flex-col justify-center">
 <div class="text-2xl md:text-3xl font-black italic mb-4 uppercase">Välkommen</div>
-<p class="text-gray-400 text-base md:text-lg leading-relaxed">Vi är redo att göra din nyårsafton oförglömlig. Kontakta oss för frågor om sortiment eller inköp.</p>
-<div class="mt-8 pt-8 border-t border-white/10 italic font-black text-[#FF6A00] text-sm md:text-base">NOXA FIREWORKS SWEDEN</div>
+<p class="text-gray-400 text-sm md:text-lg leading-relaxed">Vi är redo att göra din nyårsafton oförglömlig. Kontakta oss för frågor om sortiment eller inköp.</p>
+<div class="mt-8 pt-8 border-t border-white/10 italic font-black text-[#FF6A00] text-xs md:text-base">NOXA FIREWORKS SWEDEN</div>
 </div>
 </div>
 </section>
@@ -117,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Data för alla dina 7 butiker (med uträknade ungefärliga GPS-koordinater för adresserna)
+    // Data för alla dina 7 butiker
     const storeLocations = [
         { name: "Kungens Kurva", address: "Modulvägen, 141 75 Kungens Kurva", lat: 59.2685, lng: 17.9168 },
         { name: "Södertälje", address: "Genetaleden 7, 151 59 Södertälje", lat: 59.1895, lng: 17.5944 },
@@ -131,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Lägg till en markör för varje butik
     storeLocations.forEach(store => {
         const marker = L.marker([store.lat, store.lng]).addTo(map);
-        // Texten som visas när man klickar på nålen
         marker.bindPopup(`<b>${store.name}</b><br>${store.address}`);
     });
 });

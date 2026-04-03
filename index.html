@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Noxa Fireworks | Sveriges Grymmaste Fyrverkerier</title>
 
-<meta name="description" content="Noxa Fireworks erbjuder Sveriges grymmaste fyrverkerier och pyroteknik. Maxa nyårsafton, festen eller nattklubben med våra pjäser. Hitta din butik i Stockholm!">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+<link rel="apple-touch-icon" href="/favicon.ico?v=2">
 
+<meta name="description" content="Noxa Fireworks erbjuder Sveriges grymmaste fyrverkerier och pyroteknik. Maxa nyårsafton, festen eller nattklubben med våra pjäser. Hitta din butik i Stockholm!">
 <meta name="keywords" content="fyrverkerier, pyroteknik, köpa fyrverkerier, Noxa fireworks, nyår, nyårsafton, raketer, fyrverkeribatteri, tårtor fyrverkeri, smällare, bengaler, isfacklor, tomtebloss, romerska ljus, Klasek, Riakeo, Dumbum, nattliv, nattklubb, VIP, fest, party, nattklubbsevent, event pyroteknik, tolvslaget, bröllopsfyrverkeri, fyrverkeributik Stockholm, fyrverkerier Södertälje, Kungens Kurva, Järfälla, Bromma, Sollentuna">
 
 <meta property="og:title" content="Noxa Fireworks | 2025">
@@ -18,13 +20,10 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root { --noxa-orange: #FF6A00; }
-/* VÄLDIGT VIKTIGT FÖR MOBIL: Förhindrar att sidan blir för bred och "sladdrig" i sidled */
 html, body { max-width: 100vw; overflow-x: hidden; font-family: 'Inter', sans-serif; background-color: #ffffff; scroll-behavior: smooth; margin:0; }
-
 .hero-bg {
 background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1920&q=80');
 background-size: cover; background-position: center; height: 100vh;
@@ -115,31 +114,23 @@ Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. H�
 </section>
 
 <script>
-// Initiera ikoner
 window.onload = () => { lucide.createIcons(); };
-
-// Initiera Karta när sidan laddats
 document.addEventListener("DOMContentLoaded", function() {
-    // Sätter centrum över Stockholm
     const map = L.map('map').setView([59.3293, 17.95], 10);
-
-    // Ladda in kartdesignen från OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Data för alla dina 7 butiker
     const storeLocations = [
         { name: "Kungens Kurva", address: "Modulvägen, 141 75 Kungens Kurva", lat: 59.2685, lng: 17.9168 },
         { name: "Södertälje", address: "Genetaleden 7, 151 59 Södertälje", lat: 59.1895, lng: 17.5944 },
-        { name: "Järfälla", address: "Barkarbyvägen 59, 177 44 Järfälla", lat: 59.413645342734334, lng: 17.864787977244447 },
+        { name: "Järfälla", address: "Barkarbyvägen 59, 177 44 Järfälla", lat: 59.4136, lng: 17.8647 },
         { name: "Bromma", address: "T-bana, Islandstorget, 168 53 Bromma", lat: 59.3440, lng: 17.8931 },
         { name: "Spånga", address: "Spångavägen 353, 163 55 Spånga", lat: 59.3796, lng: 17.9103 },
         { name: "Sollentuna", address: "Stupvägen 1, 191 42 Sollentuna", lat: 59.4326, lng: 17.9430 },
         { name: "Stockholm (Hammarby Sjöstad)", address: "Hammarby allé 84, 120 61 Stockholm", lat: 59.3031, lng: 18.0965 }
     ];
 
-    // Lägg till en markör för varje butik
     storeLocations.forEach(store => {
         const marker = L.marker([store.lat, store.lng]).addTo(map);
         marker.bindPopup(`<b>${store.name}</b><br>${store.address}`);

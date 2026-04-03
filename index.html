@@ -115,20 +115,23 @@ Bläddra i vår fullständiga produktkatalog för 2025 direkt i webbläsaren. H�
 
 <script>
 window.onload = () => { lucide.createIcons(); };
+
 document.addEventListener("DOMContentLoaded", function() {
     const map = L.map('map').setView([59.3293, 17.95], 10);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
+    // EXACT LOCATIONS UPDATED
     const storeLocations = [
-        { name: "Kungens Kurva", address: "Modulvägen, 141 75 Kungens Kurva", lat: 59.2685, lng: 17.9168 },
-        { name: "Södertälje", address: "Genetaleden 7, 151 59 Södertälje", lat: 59.1895, lng: 17.5944 },
-        { name: "Järfälla", address: "Barkarbyvägen 59, 177 44 Järfälla", lat: 59.4136, lng: 17.8647 },
-        { name: "Bromma", address: "T-bana, Islandstorget, 168 53 Bromma", lat: 59.3440, lng: 17.8931 },
-        { name: "Spånga", address: "Spångavägen 353, 163 55 Spånga", lat: 59.3796, lng: 17.9103 },
-        { name: "Sollentuna", address: "Stupvägen 1, 191 42 Sollentuna", lat: 59.4326, lng: 17.9430 },
-        { name: "Stockholm (Hammarby Sjöstad)", address: "Hammarby allé 84, 120 61 Stockholm", lat: 59.3031, lng: 18.0965 }
+        { name: "Kungens Kurva", address: "Modulvägen, 141 75 Kungens Kurva", lat: 59.27048, lng: 17.91544 },
+        { name: "Södertälje", address: "Genetaleden 7, 151 59 Södertälje", lat: 59.18956, lng: 17.59397 },
+        { name: "Järfälla", address: "Barkarbyvägen 59, 177 44 Järfälla", lat: 59.41215, lng: 17.86338 },
+        { name: "Bromma", address: "Islandstorgets T-bana, 168 53 Bromma", lat: 59.34445, lng: 17.89315 },
+        { name: "Spånga", address: "Spångavägen 353, 163 55 Spånga", lat: 59.37946, lng: 17.91039 },
+        { name: "Sollentuna", address: "Stupvägen 1, 191 42 Sollentuna", lat: 59.43261, lng: 17.94302 },
+        { name: "Stockholm (Hammarby Sjöstad)", address: "Hammarby allé 84, 120 61 Stockholm", lat: 59.30327, lng: 18.09635 }
     ];
 
     storeLocations.forEach(store => {
